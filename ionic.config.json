@@ -1,0 +1,7 @@
+{
+  "name": "ionicmobileapp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
