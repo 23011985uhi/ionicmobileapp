@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent, IonIcon } from '@ionic/angular/standalone';
-import { ExploreContainerComponent } from '../explore-container/explore-container.component';
+import { IonHeader, IonToolbar, IonTitle, IonContent, IonIcon, IonCard, IonCardContent, IonCardTitle, IonCardHeader, IonCol, IonRow, IonGrid } from '@ionic/angular/standalone';
+
 import { HeaderComponent } from '../shared/header/header.component';
 
 
@@ -9,7 +9,7 @@ import { HeaderComponent } from '../shared/header/header.component';
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss'],
   standalone: true,
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonIcon, ExploreContainerComponent, HeaderComponent],
+  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonIcon,IonCard, IonCardContent, IonCardTitle, IonCardHeader, IonCol, IonRow, IonGrid, HeaderComponent],
 })
 export class Tab1Page {
   pageTitle: string = 'Subjects';

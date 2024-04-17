@@ -1,7 +1,7 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'ionic.ionicmobileapp',
+  appId: 'com.uhi.23011985',
   appName: 'ionicmobileapp',
   webDir: 'www',
   server: {
