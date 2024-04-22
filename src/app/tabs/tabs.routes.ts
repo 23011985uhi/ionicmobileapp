@@ -18,6 +18,11 @@ export const routes: Routes = [
           import('../tab1/maths/maths.page').then((m) => m.MathsPage),
       },
       {
+        path: 'tab1/maths/accmaths',
+        loadComponent: () =>
+          import('../tab1/maths/accmaths/accmaths.page').then((m) => m.AccMathsPage),
+      },
+      {
         path: 'tab2',
         loadComponent: () =>
           import('../tab2/tab2.page').then((m) => m.Tab2Page),
