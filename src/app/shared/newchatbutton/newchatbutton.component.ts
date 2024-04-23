@@ -1,25 +1,21 @@
 import { Component, OnInit } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonButtons, IonIcon, IonFab, IonFabButton} from '@ionic/angular/standalone';
+import {  IonIcon, IonFab, IonFabButton} from '@ionic/angular/standalone';
+import { NewChatModalComponent } from '../newchatmodal/newchatmodal.component';
+import { add } from 'ionicons/icons';
 import { addIcons } from 'ionicons';
-import { addCircle } from 'ionicons/icons';
 
 @Component({
   selector: 'app-new-chat-button',
   templateUrl: './newchatbutton.component.html',
   styleUrls: ['./newchatbutton.component.scss'],
   standalone: true,
-  imports: [IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonButtons, IonIcon, IonFab, IonFabButton]
+  imports: [IonIcon, IonFab, IonFabButton, NewChatModalComponent]
 })
-export class NewChatButtonComponent implements OnInit {
+export class NewChatButtonComponent {
 
-  constructor() { 
-    addIcons({ addCircle });
+  constructor() {
+    addIcons({ add })
   }
 
-  ngOnInit() {}
-
-  createNewChat() {
-    console.log('Create new chat clicked!');
-    
-  }
+ 
 }
