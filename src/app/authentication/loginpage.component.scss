@@ -1,0 +1,23 @@
+ion-content {
+	--padding-top:90%;
+	--padding-start: 10%;
+	--padding-end: 10%;
+	--background: url('https://i.pinimg.com/736x/a0/1c/e2/a01ce2bceef84e1783e369e7b3a1c9b2.jpg')
+		0 0/100% 100% no-repeat;
+}
+
+.input-group {
+	background: #fff;
+	border-radius: 10px;
+	overflow: hidden;
+	margin-bottom: 15px;
+  opacity: 0.7;
+}
+
+.header-title {
+  opacity:1;
+  
+  padding-bottom:20%;
+  color:white;
+  size:2rem;
+}

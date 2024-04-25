@@ -1,3 +1,17 @@
 <HeaderComponent [title]="pageTitle"></HeaderComponent>
-<app-new-chat-button></app-new-chat-button>
+<app-tab2-new-chat-button></app-tab2-new-chat-button>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+     <ion-col size="12" *ngFor="let chatroom of chatrooms">
+        <ion-card [routerLink]="[ chatroom.id]">
+          <ion-card-header>
+            <ion-card-title>{{ chatroom.title }}</ion-card-title>
+            <ion-card-content>{{ chatroom.formattedTimestamp }}</ion-card-content>
+          </ion-card-header>
+          </ion-card>
+      </ion-col>
+   </ion-row>
+  </ion-grid>
+</ion-content>
 

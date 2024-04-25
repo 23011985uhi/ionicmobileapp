@@ -4,7 +4,7 @@ import { RouterLink } from '@angular/router';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonIcon, IonCard, IonCardContent, IonCardTitle, IonCardHeader, IonCol, IonRow, IonGrid } from '@ionic/angular/standalone';
 import { getDatabase, ref, onValue } from 'firebase/database';
 import { HeaderComponent } from '../../../shared/header/header.component';
-import { NewChatButtonComponent } from '../../../shared/newchatbutton/newchatbutton.component';
+import { NewChatButtonComponent1 } from '../../newchatbuttontab1/tab1newchatbutton.component';
 import { firebaseApp } from '../../../shared/firebaseconfig'
 
 
@@ -13,7 +13,7 @@ import { firebaseApp } from '../../../shared/firebaseconfig'
   templateUrl: 'accmaths.page.html',
   styleUrls: ['accmaths.page.scss'],
   standalone: true,
-  imports: [CommonModule, RouterLink, IonHeader, IonToolbar, IonTitle, IonContent,IonIcon, HeaderComponent, NewChatButtonComponent, IonCard, IonCardContent, IonCardTitle, IonCardHeader, IonCol, IonRow, IonGrid]
+  imports: [CommonModule, RouterLink, IonHeader, IonToolbar, IonTitle, IonContent,IonIcon, HeaderComponent, NewChatButtonComponent1, IonCard, IonCardContent, IonCardTitle, IonCardHeader, IonCol, IonRow, IonGrid]
 })
 export class AccMathsPage implements OnInit{
   pageTitle: string = 'Accounting & Mathematics';

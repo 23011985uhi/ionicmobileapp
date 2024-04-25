@@ -1,0 +1,26 @@
+
+
+<ion-content>
+  <ion-title class="header-title">Welcome to AppName<br>Please sign In</ion-title>
+  <div class="input-group">
+    <ion-item>
+      <ion-input type="email" placeholder="Email" [(ngModel)]="email"></ion-input>
+    </ion-item>
+    <div class="errors">
+      <!-- Display any validation errors here -->
+    </div>
+    <ion-item>
+      <ion-input type="password" placeholder="Password" [(ngModel)]="password"></ion-input>
+    </ion-item>
+    <div class="errors">
+      <!-- Display any validation errors here -->
+    </div>
+  </div>
+
+  <ion-button (click)="signIn()" expand="block">Log in</ion-button>
+
+  <ion-text color="danger" *ngIf="loginError">
+    Invalid email or password. Please try again.
+  </ion-text>
+ <ion-button expand="block" color="light" fill="clear">Not registered? Sign up!</ion-button>
+</ion-content>
