@@ -22,5 +22,5 @@
   <ion-text color="danger" *ngIf="loginError">
     Invalid email or password. Please try again.
   </ion-text>
- <ion-button expand="block" color="light" fill="clear">Not registered? Sign up!</ion-button>
+ <ion-button expand="block" color="light" fill="clear" (click)="goToSignUp()">Not registered? Sign up!</ion-button>
 </ion-content>

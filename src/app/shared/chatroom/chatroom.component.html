@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button (click)="goBack()"> <ion-icon name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>{{ chatroom.title }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="message-list">
+    <ion-item *ngFor="let message of messages">
+      <ion-avatar slot="start">
+        </ion-avatar>
+      <ion-label>
+        <h2>{{ message.sender }}</h2>
+        <p>{{ message.content }}</p>
+        <p class="timestamp">{{ message.timestamp | date:'mediumTime' }}</p>
+      </ion-label>
+    </ion-item>
+  </div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar color="primary">
+    <ion-input type="text" [(ngModel)]="messageContent" placeholder="Type your message..."></ion-input>
+    <ion-button (click)="sendMessage(messageContent)">Send</ion-button>
+  </ion-toolbar>
+</ion-footer>

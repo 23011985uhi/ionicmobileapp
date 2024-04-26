@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { TabsPage } from './tabs/tabs.page';
+import { ChatroomDetailsComponent } from './shared/chatroom/chatroomdetails.component';
 
 //export const routes: Routes = [
   //{
@@ -16,9 +17,17 @@ import { TabsPage } from './tabs/tabs.page';
 		//canLoad: [IntroGuard, AutoLoginGuard] // Check if we should show the introduction or forward to inside
 	},
   {
+    path: 'signup',
+    loadComponent: () => import('./authentication/signuppage.component').then((m) => m.SignupPage)
+  },
+  {
     path: '',
     redirectTo: '/login',
     pathMatch: 'full', // Redirect to login if the path is empty
+},
+{
+  path: 'chatroom/:id',
+  component: ChatroomDetailsComponent,
 },
 	{
     path: 'tabs',

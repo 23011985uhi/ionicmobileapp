@@ -6,6 +6,7 @@ import { HeaderComponent } from '../shared/header/header.component';
 import { NewChatButtonComponent2 } from './newchatbuttontab2/tab2newchatbutton.component';
 import { getDatabase, ref, onValue } from "firebase/database";
 import { firebaseApp } from '../shared/firebaseconfig';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-tab2',
@@ -17,12 +18,12 @@ import { firebaseApp } from '../shared/firebaseconfig';
 export class Tab2Page {
   pageTitle: string = 'Sports';
   chatrooms: any[] = [];
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
     const db = getDatabase(firebaseApp);
     const chatsRef = ref(db, 'tab2/chatrooms'); // Updated path to the chatrooms
-  
+    
     onValue(chatsRef, (snapshot) => {
       const data = snapshot.val();
       if (data) {
@@ -37,12 +38,15 @@ export class Tab2Page {
       } else {
         this.chatrooms = [];
       }
-      console.log('Chats:', this.chatrooms);
+     // console.log('Chats:', this.chatrooms);
     }, (error) => {
       console.error('Failed to fetch data:', error);
     });
+    
   }
-
+  goToChatroomDetails(id: string, title: string) {
+    this.router.navigate(['/chatroom', id], { queryParams: { title } });
+  }
   // Function to format timestamp into desired format
   formatTimestamp(timestamp: Date): string {
     let hours: number = timestamp.getHours();

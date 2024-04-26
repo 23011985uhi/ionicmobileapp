@@ -1,0 +1,22 @@
+<ion-content>
+  <ion-title class="header-title">Don't have an Account?<br>Make one using Email and password</ion-title>
+  <div class="input-group">
+    <ion-item>
+      <ion-input type="email" placeholder="Email" [(ngModel)]="email"></ion-input>
+    </ion-item>
+    <div class="errors">
+      <!-- Display any validation errors here -->
+    </div>
+    <ion-item>
+      <ion-input type="password" placeholder="Password" [(ngModel)]="password"></ion-input>
+    </ion-item>
+    <div class="errors">
+      <!-- Display any validation errors here -->
+    </div>
+  </div>
+
+  <ion-button expand="block" (click)="signUp()">Sign Up</ion-button>
+
+  
+
+</ion-content>

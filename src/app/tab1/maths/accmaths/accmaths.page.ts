@@ -17,29 +17,52 @@ import { firebaseApp } from '../../../shared/firebaseconfig'
 })
 export class AccMathsPage implements OnInit{
   pageTitle: string = 'Accounting & Mathematics';
-  chats: any[] = []; 
-  
-
+  chatrooms: any[] = []; 
   constructor() {}
   
   ngOnInit(): void {
-    // Firebase being initialised in firebaseconfig.ts
-
-    // Access Firebase database
     const db = getDatabase(firebaseApp);
-    const chatsRef = ref(db, 'tab1/maths/accmaths/chats');
-
+    const chatsRef = ref(db, 'tab1/maths/accmaths/chatrooms'); // Updated path to the chatrooms
+  
     onValue(chatsRef, (snapshot) => {
       const data = snapshot.val();
       if (data) {
-        this.chats = Object.keys(data).map(key => ({
-          id: key,
-          title: data[key].title
-        }));
+        this.chatrooms = Object.keys(data)
+          .map(key => ({
+            id: key,
+            title: data[key].title,
+            timestamp: new Date(data[key].timestamp), // Convert timestamp to Date object
+            formattedTimestamp: this.formatTimestamp(new Date(data[key].timestamp)) // Format timestamp
+          }))
+          .sort((a, b) => b.timestamp.getTime() - a.timestamp.getTime()); // Sort by timestamp in descending order
+      } else {
+        this.chatrooms = [];
       }
-      console.log('Chats:', this.chats);
+     // console.log('Chats:', this.chatrooms);
     }, (error) => {
       console.error('Failed to fetch data:', error);
     });
+  }
+
+  // Function to format timestamp into desired format
+  formatTimestamp(timestamp: Date): string {
+    let hours: number = timestamp.getHours();
+    const minutes = timestamp.getMinutes().toString().padStart(2, '0');
+    const day = timestamp.getDate().toString().padStart(2, '0');
+    const month = (timestamp.getMonth() + 1).toString().padStart(2, '0'); // Month is zero-based
+    const year = timestamp.getFullYear().toString();
+  
+    let amPm = 'AM';
+    if (hours >= 12) {
+      amPm = 'PM';
+      if (hours > 12) {
+        hours -= 12;
+      }
+    }
+    if (hours === 0) {
+      hours = 12;
+    }
+  
+    return `${hours}:${minutes} ${amPm} ${day}/${month}/${year}`;
   }
 }

@@ -37,7 +37,7 @@ export class Tab3Page {
       } else {
         this.chatrooms = [];
       }
-      console.log('Chats:', this.chatrooms);
+     // console.log('Chats:', this.chatrooms);
     }, (error) => {
       console.error('Failed to fetch data:', error);
     });
