@@ -1,5 +1,5 @@
-ion-content {
-	--padding-top:90%;
+.background {
+	--padding-top:70%;
 	--padding-start: 10%;
 	--padding-end: 10%;
 	--background: url('https://i.pinimg.com/736x/e3/22/7d/e3227dd769230071b11cdef1e6ea4132.jpg')
@@ -11,12 +11,21 @@ ion-content {
 	border-radius: 10px;
 	overflow: hidden;
 	margin-bottom: 15px;
-  opacity: 0.7;
+  
 }
 
-.header-title {
-  opacity:1;
-  padding-bottom:20%;
-  color:white;
-  size:2rem;
+.login-box {
+	background-color: white;
+
+  border-radius: 70px;
+	height:40%;
+	opacity:0.9;
+}
+
+.header-title{
+	size:2em;
+}
+
+.create-user{
+	color:black;
 }

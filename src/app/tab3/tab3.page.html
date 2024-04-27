@@ -4,7 +4,7 @@
   <ion-grid>
     <ion-row>
      <ion-col size="12" *ngFor="let chatroom of chatrooms">
-        <ion-card [routerLink]="[ chatroom.id]">
+        <ion-card [routerLink]="['/tab3chatroom', chatroom.id]">
           <ion-card-header>
             <ion-card-title>{{ chatroom.title }}</ion-card-title>
             <ion-card-content>{{ chatroom.formattedTimestamp }}</ion-card-content>

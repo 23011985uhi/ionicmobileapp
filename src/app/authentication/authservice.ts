@@ -16,7 +16,7 @@ export class AuthService {
     const firebaseApp = initializeApp(firebaseConfig);
     this.auth = getAuth(); // Initialize Firebase Auth
 
-    // Listen for authentication state changes
+    // Listen for auth state changes
     onAuthStateChanged(this.auth, (user) => {
       this.user = user;
       this.userUID = user ? user.uid : null;
@@ -32,7 +32,7 @@ export class AuthService {
       this.router.navigateByUrl('/tabs/tab1'); // Redirect to tabs/tab1 page when signed in
     } catch (error) {
       console.error('Sign-in error:', error);
-      throw error; // Propagate the error to the caller
+      throw error; // Show error
     }
   }
   async signUp(email: string, password: string) {
@@ -43,7 +43,7 @@ export class AuthService {
       this.router.navigateByUrl('/tabs/tab1'); // Redirect to tabs/tab1 page when signed up
     } catch (error) {
       console.error('Sign-up error:', error);
-      throw error; // Propagate the error to the caller
+      throw error; // Show error in nav
     }
   }
 
@@ -58,5 +58,5 @@ export class AuthService {
     }
   }
 
-  // Add other authentication methods as needed
+  
 }

@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{ chatroomTitle }}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="message-container">
+    <div *ngFor="let message of messages" [ngClass]="{ 'sent': message.sentBy === authService.userUID, 'received': message.sentBy !== authService.userUID }">
+      <p>{{ message.content }}</p>
+    </div>
+  </div>
+</ion-content>
+
+  <ion-footer>
+    <ion-toolbar>
+      <ion-item>
+        <ion-label position="stacked" id="messageLabel" ></ion-label>
+        <ion-input class="input-msg" type="text" [(ngModel)]="message" name="message" aria-labelledby="messageLabel" placeholder="Enter your message..." required ></ion-input>
+        <ion-button class="submit-btn" slot="end" (click)="sendMessage()">Send</ion-button>
+      </ion-item>
+  
+
+   </ion-toolbar>
+  </ion-footer>

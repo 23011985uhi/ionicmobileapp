@@ -48,7 +48,7 @@ export class Tab3Page {
     let hours: number = timestamp.getHours();
     const minutes = timestamp.getMinutes().toString().padStart(2, '0');
     const day = timestamp.getDate().toString().padStart(2, '0');
-    const month = (timestamp.getMonth() + 1).toString().padStart(2, '0'); // Month is zero-based
+    const month = (timestamp.getMonth() + 1).toString().padStart(2, '0'); 
     const year = timestamp.getFullYear().toString();
   
     let amPm = 'AM';

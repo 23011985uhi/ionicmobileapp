@@ -51,7 +51,7 @@ export class NewChatButtonComponent2 {
               }
               
               const db = getDatabase(); // Get database instance
-              const databaseRef = ref(db, '/tab2/chatrooms'); // Reference to the database node
+              const databaseRef = ref(db, '/tab2/chatrooms'); // Reference to the database 
 
               // Ensure that data.alertInput is not empty or undefined
               if (!data.alertInput) {

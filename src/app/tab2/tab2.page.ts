@@ -22,7 +22,7 @@ export class Tab2Page {
 
   ngOnInit(): void {
     const db = getDatabase(firebaseApp);
-    const chatsRef = ref(db, 'tab2/chatrooms'); // Updated path to the chatrooms
+    const chatsRef = ref(db, 'tab2/chatrooms'); // Retrieve data from teh specific route to be displayed. 
     
     onValue(chatsRef, (snapshot) => {
       const data = snapshot.val();
@@ -31,7 +31,7 @@ export class Tab2Page {
           .map(key => ({
             id: key,
             title: data[key].title,
-            timestamp: new Date(data[key].timestamp), // Convert timestamp to Date object
+            timestamp: new Date(data[key].timestamp), // Convert timestamp to Date 
             formattedTimestamp: this.formatTimestamp(new Date(data[key].timestamp)) // Format timestamp
           }))
           .sort((a, b) => b.timestamp.getTime() - a.timestamp.getTime()); // Sort by timestamp in descending order
@@ -47,12 +47,12 @@ export class Tab2Page {
   goToChatroomDetails(id: string, title: string) {
     this.router.navigate(['/chatroom', id], { queryParams: { title } });
   }
-  // Function to format timestamp into desired format
+  // Function to format timestamp 
   formatTimestamp(timestamp: Date): string {
     let hours: number = timestamp.getHours();
     const minutes = timestamp.getMinutes().toString().padStart(2, '0');
     const day = timestamp.getDate().toString().padStart(2, '0');
-    const month = (timestamp.getMonth() + 1).toString().padStart(2, '0'); // Month is zero-based
+    const month = (timestamp.getMonth() + 1).toString().padStart(2, '0'); 
     const year = timestamp.getFullYear().toString();
   
     let amPm = 'AM';

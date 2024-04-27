@@ -9,4 +9,4 @@ export const firebaseConfig = {
   messagingSenderId: "795472618482",
   appId: "1:795472618482:web:e2313fcaa1f45dca1a416b"
 };
- export const firebaseApp = initializeApp(firebaseConfig);
+ export const firebaseApp = initializeApp(firebaseConfig);     // Initialising and exporting firebase for use in other components

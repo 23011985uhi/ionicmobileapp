@@ -3,9 +3,9 @@ import { getAuth } from "firebase/auth";
 import { firebaseConfig } from "./firebaseconfig";
 
 
-// Initialize Firebase
+// Initialise firebase from firebaseconfig
 const app = initializeApp(firebaseConfig);
 
 
-// Initialize Firebase Authentication and get a reference to the service
+// Initialise Firebase Authentication and get a reference to export
 export const auth = getAuth(app);

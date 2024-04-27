@@ -1,20 +1,15 @@
 import { Routes } from '@angular/router';
 import { TabsPage } from './tabs/tabs.page';
-import { ChatroomDetailsComponent } from './shared/chatroom/chatroomdetails.component';
-
-//export const routes: Routes = [
-  //{
-   // path: '',
-   // loadChildren: () => import('./tabs/tabs.routes').then((m) => m.routes),
- // },
-  
-//];
-
- export const routes: Routes = [
+import { Tab2ChatroomDetailsComponent } from './shared/chatroom/tab2chatroomdetails/tab2chatroomdetails.component';
+import { Tab4ChatroomDetailsComponent } from './shared/chatroom/tab4chatroomdetails/tab4chatroomdetails.component';
+import { Tab3ChatroomDetailsComponent } from './shared/chatroom/tab3chatroomdetails/tab3chatroomdetails.component';
+import { Tab1ChatroomDetailsComponent } from './shared/chatroom/tab1chatroomdetails/tab1chatroomdetails.component';
+ 
+export const routes: Routes = [
 	{
 		path: 'login',
 		loadComponent: () => import('./authentication/loginpage.component').then((m) => m.LoginPage),
-		//canLoad: [IntroGuard, AutoLoginGuard] // Check if we should show the introduction or forward to inside
+		
 	},
   {
     path: 'signup',
@@ -26,8 +21,20 @@ import { ChatroomDetailsComponent } from './shared/chatroom/chatroomdetails.comp
     pathMatch: 'full', // Redirect to login if the path is empty
 },
 {
-  path: 'chatroom/:id',
-  component: ChatroomDetailsComponent,
+  path: 'tab1mathsaccmathschatroom/:id',
+  component: Tab1ChatroomDetailsComponent,
+},
+{
+  path: 'tab2chatroom/:id',
+  component: Tab2ChatroomDetailsComponent,
+},
+{
+  path: 'tab3chatroom/:id',
+  component: Tab3ChatroomDetailsComponent,
+},
+{
+  path: 'tab4chatroom/:id',
+  component: Tab4ChatroomDetailsComponent,
 },
 	{
     path: 'tabs',

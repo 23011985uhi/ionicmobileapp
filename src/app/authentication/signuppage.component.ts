@@ -24,7 +24,7 @@ export class SignupPage {
     try {
       await this.authService.signUp(this.email, this.password);
     } catch (error:any) {
-      // Handle error
+    
       this.errorMessage = error.message;
     }
   }
